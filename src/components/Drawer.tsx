@@ -13,16 +13,18 @@ interface Props {
 
 const Drawer = ({ isOpen, onToggle, selectedItem, total }: Props) => {
   return (
-    <aside className={clsx("relative bg-slate-100")}>
+    <aside className={clsx("relative bg-slate-200")}>
       <div
         onClick={onToggle}
         className={clsx(
           "cursor-pointer",
-          "absolute top-6 -left-10 w-10 h-12 bg-red-200",
-          "flex justify-center items-center",
+          "absolute top-6 -left-10 w-10 h-12 bg-slate-200 rounded-tl-md rounded-bl-md",
+          "flex flex-col justify-center items-center space-y-1",
         )}
       >
-        x
+        <div className="w-6 h-[1px] bg-black"></div>
+        <div className="w-6 h-[1px] bg-black"></div>
+        <div className="w-6 h-[1px] bg-black"></div>
       </div>
 
       <div
@@ -38,9 +40,8 @@ const Drawer = ({ isOpen, onToggle, selectedItem, total }: Props) => {
             !isOpen ? " opacity-0" : " opacity-100 delay-1000",
           )}
         >
-          {/* <div className="absolute top-0 right-0 w-full h-full bg-green-100"> */}
-          {/* <div className=" transition-opacity"> */}
           {!selectedItem && <p className="mt-2">目前資料量：{total}</p>}
+
           {selectedItem && (
             <div>
               <h2>{selectedItem.name}</h2>

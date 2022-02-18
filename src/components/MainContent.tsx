@@ -47,7 +47,7 @@ const MainContent = ({ mockData }: Props) => {
   return (
     <div className="flex">
       <section className={clsx("flex-1", "mr-10 px-4 py-6")}>
-        <h2>Main Content</h2>
+        <h2># Main Content</h2>
 
         <div>
           {/* THEAD */}
