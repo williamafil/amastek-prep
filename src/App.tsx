@@ -1,14 +1,22 @@
 import React from "react";
-import "./styles.css";
-import Requirement from "./Requirement";
 
-import mockData from "../mock"; // 請使用此資料
+import mockData from "./mock"; // 請使用此資料
+import Aside from "./components/Aside";
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
+import "./styles.css";
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <Requirement />
+      <div className="flex">
+        <aside>
+          <Aside />
+        </aside>
+        <main className="flex-1">
+          <Header />
+          <MainContent mockData={mockData} />
+        </main>
       </div>
     );
   }
