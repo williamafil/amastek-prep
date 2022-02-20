@@ -15,7 +15,7 @@ class App extends React.Component {
         </aside>
         <main className="flex-1">
           <Header />
-          <div className="mt-[80px]">
+          <div className="ml-[120px] mt-[80px]">
             <MainContent mockData={mockData} />
           </div>
         </main>
