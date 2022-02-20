@@ -18,25 +18,33 @@ const Drawer = ({ isOpen, onToggle, selectedItem, total }: Props) => {
         onClick={onToggle}
         className={clsx(
           "cursor-pointer",
-          "absolute top-6 -left-10 w-10 h-12 bg-slate-200 rounded-tl-md rounded-bl-md",
+          "relative right-4 top-11 w-0 h-12 rounded-tl-md rounded-bl-md",
           "flex flex-col justify-center items-center space-y-1",
         )}
       >
-        <div className="w-6 h-[1px] bg-black"></div>
-        <div className="w-6 h-[1px] bg-black"></div>
-        <div className="w-6 h-[1px] bg-black"></div>
+        <div
+          className={clsx(
+            "fixed w-8 h-10 bg-slate-200 space-y-1",
+            "flex flex-col justify-center items-center",
+            "rounded-tl-md rounded-bl-md",
+          )}
+        >
+          <div className="w-6 h-[1px] bg-black"></div>
+          <div className="w-6 h-[1px] bg-black"></div>
+          <div className="w-6 h-[1px] bg-black"></div>
+        </div>
       </div>
 
       <div
         className={clsx(
-          "relative",
-          "transition-all delay-500",
+          "transition-all delay-500 overflow-hidden",
           !isOpen ? "w-0" : "w-[200px]",
         )}
       >
         <div
           className={clsx(
-            "mt-2 p-2 transition-opacity duration-500 ease-out",
+            "fixed top-20 w-[200px]",
+            "mt-2 p-2 transition-opacity delay-500 ease-out",
             !isOpen ? " opacity-0" : " opacity-100 delay-1000",
           )}
         >
@@ -47,7 +55,7 @@ const Drawer = ({ isOpen, onToggle, selectedItem, total }: Props) => {
               <h2>{selectedItem.name}</h2>
               <div className="flex flex-col justify-center space-y-2">
                 {selectedItem.items.map((pic) => (
-                  <img src={pic} alt={selectedItem.name} />
+                  <img key={pic} src={pic} alt={selectedItem.name} />
                 ))}
               </div>
             </div>
