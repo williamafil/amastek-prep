@@ -34,8 +34,6 @@ const MainContent = ({ mockData }: Props) => {
   };
 
   const onDoubleClickHandler = (e: React.MouseEvent<HTMLLabelElement>) => {
-    console.log("點擊兩次: ", e.target);
-
     if (!selected) return;
     if (!isOpen) setIsOpen(true);
   };
